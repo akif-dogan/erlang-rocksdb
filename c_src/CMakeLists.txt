@@ -242,7 +242,11 @@ target_include_directories(${ErlangRocksDBNIF_TARGET}
 
 set(TARGET_LINKER_OPTIONS)
 if(APPLE)
-	set(TARGET_LINKER_OPTIONS "-flat_namespace -undefined suppress")
+    set(TARGET_LINKER_OPTIONS "-flat_namespace -undefined suppress")
+    if (CMAKE_OSX_ARCHITECTURES STREQUAL arm64)
+      set(TARGET_LINKER_OPTIONS "${TARGET_LINKER_OPTIONS} -arch arm64")
+      set(CXXFLAGS "${CXXFLAGS} -arch arm64")
+    endif()
 endif(APPLE)
 
 target_link_libraries(

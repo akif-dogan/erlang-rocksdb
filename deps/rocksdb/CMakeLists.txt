@@ -237,6 +237,11 @@ else()
   endif()
 endif()
 
+if(DEFINED $ENV{CMAKE_APPLE_SILICON_PROCESSOR})
+  set_target_properties(${ROCKSDB_STATIC_LIB} PROPERTIES
+        COMPILE_FLAGS "-arch $ENV{CMAKE_APPLE_SILICON_PROCESSOR}")
+endif()
+
 include(CheckCCompilerFlag)
 if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(powerpc|ppc)64")
   CHECK_C_COMPILER_FLAG("-mcpu=power9" HAS_POWER9)
