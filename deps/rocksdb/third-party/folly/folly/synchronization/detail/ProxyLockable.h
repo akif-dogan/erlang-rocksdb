@@ -8,6 +8,7 @@
 #include <folly/Optional.h>
 
 #include <mutex>
+#include <cstdlib>
 
 namespace folly {
 namespace detail {
