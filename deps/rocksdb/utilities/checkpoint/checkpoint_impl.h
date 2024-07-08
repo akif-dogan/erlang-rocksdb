@@ -8,6 +8,7 @@
 
 #include "rocksdb/utilities/checkpoint.h"
 
+#include <cstdint>
 #include <string>
 #include "file/filename.h"
 #include "rocksdb/db.h"

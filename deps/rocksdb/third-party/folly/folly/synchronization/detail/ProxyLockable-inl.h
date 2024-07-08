@@ -9,11 +9,14 @@
 #include <folly/Portability.h>
 #include <folly/Utility.h>
 
+#include <cstdlib>
 #include <cassert>
 #include <memory>
 #include <mutex>
 #include <stdexcept>
 #include <utility>
+#include <system_error>
+
 
 namespace folly {
 namespace detail {
